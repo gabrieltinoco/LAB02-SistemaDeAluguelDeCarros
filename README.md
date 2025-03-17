@@ -11,37 +11,50 @@ O RentWheels, sistema de aluguel de carros permitirá que usuários individuais 
 
 ## Casos de Uso
 
+
 ### UC1 - Cadastrar no Sistema
 
 **Como** cliente,<br/> 
 **Eu quero** me cadastrar no sistema, <br/>
 **Para** poder fazer pedidos de aluguel de carros<br/>
 
-### UC2 - Modificar Pedido no Sistema
+
+### UC2 - Solicitar Pedido
+
+**Como** cliente,<br/> 
+**Eu quero** cancelar um pedido de aluguel,<br/>
+**Para** desistir de um aluguel que não desejo mais<br>
+
+### UC3 - Modificar Pedido
 
 **Como** cliente,<br/> 
 **Eu quero** modificar um pedido de aluguel,<br/>
 **Para** ajustar detalhes como período ou tipo de contrato.<br/>
 
-### UC3 - Cancelar Pedido no Sistema
+### UC4 - Cancelar Pedido
 
 **Como** cliente,<br/> 
 **Eu quero** cancelar um pedido de aluguel,<br/>
 **Para** desistir de um aluguel que não desejo mais<br>
 
-### UC4 - Cancelar Pedido no Sistema
 
-**Como** cliente,<br/> 
-**Eu quero** cancelar um pedido de aluguel,<br/>
-**Para** desistir de um aluguel que não desejo mais<br>
+### UC5 - Analisar Financeiramente ao Aluguel
 
-### UC5 - Analisar Financeiramente o Aluguel
-
-**Como** cliente,<br/> 
+**Como** agente,<br/> 
 **Eu quero** avaliar um pedido de aluguel financeiramente,<br/>
 **Para** garantir que o cliente tem condições de pagamento.<br>
 
+### UC6 - Avaliar ao Aluguel
+
+**Como** cliente,<br/> 
+**Eu quero** executar um contrato de aluguel,<br/>
+**Para** formalizar o aluguel após a aprovação financeira.<br>
+
 ## Diagrama de Caso de Uso
+
+### Versão 01:
+![image](https://github.com/user-attachments/assets/962046de-97f6-4256-aa8b-a060bc578e6a)
+
 
 ## Diagrama de Classe
 
