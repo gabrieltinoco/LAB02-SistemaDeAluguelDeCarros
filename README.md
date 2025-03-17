@@ -11,6 +11,10 @@ O RentWheels, sistema de aluguel de carros permitirá que usuários individuais 
 
 ## Casos de Uso
 
+**Como**<br/> 
+**Eu quero**<br/>
+**Para**<br/>
+
 ## Diagrama de Caso de Uso
 
 ## Diagrama de Classe
