@@ -11,9 +11,35 @@ O RentWheels, sistema de aluguel de carros permitirá que usuários individuais 
 
 ## Casos de Uso
 
-**Como**<br/> 
-**Eu quero**<br/>
-**Para**<br/>
+### UC1 Cadastrar no Sistema
+
+**Como** cliente,<br/> 
+**Eu quero** me cadastrar no sistema, <br/>
+**Para** poder fazer pedidos de aluguel de carros<br/>
+
+### UC2 - Modificar Pedido no Sistema
+
+**Como** cliente,<br/> 
+**Eu quero** modificar um pedido de aluguel,<br/>
+**Para** ajustar detalhes como período ou tipo de contrato.<br/>
+
+### UC3 - Cancelar Pedido no Sistema
+
+**Como** cliente,<br/> 
+**Eu quero** cancelar um pedido de aluguel,<br/>
+**Para** desistir de um aluguel que não desejo mais<br>
+
+### UC4 - Cancelar Pedido no Sistema
+
+**Como** cliente,<br/> 
+**Eu quero** cancelar um pedido de aluguel,<br/>
+**Para** desistir de um aluguel que não desejo mais<br>
+
+### UC5 - Analisar Financeiramente o Aluguel
+
+**Como** cliente,<br/> 
+**Eu quero** avaliar um pedido de aluguel financeiramente,<br/>
+**Para** garantir que o cliente tem condições de pagamento.<br>
 
 ## Diagrama de Caso de Uso
 
