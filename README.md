@@ -67,3 +67,6 @@ O RentWheels, sistema de aluguel de carros permitirá que usuários individuais 
 ![LABS-LAB02-DiagramaDeClasses](https://github.com/user-attachments/assets/06684cc3-65c0-4d6d-85dd-1eeb69d79b26)
 
 ## Diagrama de Pacotes
+
+### Versão 01:
+![image](https://github.com/user-attachments/assets/820f2458-7b48-46b3-89cb-863548ea864e)
