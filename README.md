@@ -19,7 +19,7 @@ O RentWheels, sistema de aluguel de carros permitirá que usuários individuais 
 **Para** poder fazer pedidos de aluguel de carros<br/>
 
 
-### UC2 - Solicitar Pedido
+### UC2 - Solicitar Pedido de Aluguel
 
 **Como** cliente,<br/> 
 **Eu quero** cancelar um pedido de aluguel,<br/>
@@ -38,17 +38,23 @@ O RentWheels, sistema de aluguel de carros permitirá que usuários individuais 
 **Para** desistir de um aluguel que não desejo mais<br>
 
 
-### UC5 - Analisar Financeiramente ao Aluguel
+### UC5 - Avaliar Financeiramente
 
 **Como** agente,<br/> 
 **Eu quero** avaliar um pedido de aluguel financeiramente,<br/>
 **Para** garantir que o cliente tem condições de pagamento.<br>
 
-### UC6 - Avaliar ao Aluguel
+### UC6 - Confirmar Contrato de Aluguel
 
-**Como** cliente,<br/> 
-**Eu quero** executar um contrato de aluguel,<br/>
+**Como** cliente ou agente,<br/> 
+**Eu quero**  quero executar um contrato de aluguel,<br/>
 **Para** formalizar o aluguel após a aprovação financeira.<br>
+
+### UC7 - Consultar Pedido
+
+**Como** cliente ou agente,<br/> 
+**Eu quero**  consultar os pedidos de aluguel,<br/>
+**Para** verificar seus status e detalhes.<br>
 
 ## Diagrama de Caso de Uso
 
