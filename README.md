@@ -11,7 +11,7 @@ O RentWheels, sistema de aluguel de carros permitirá que usuários individuais 
 
 ## Casos de Uso
 
-### UC1 Cadastrar no Sistema
+### UC1 - Cadastrar no Sistema
 
 **Como** cliente,<br/> 
 **Eu quero** me cadastrar no sistema, <br/>
