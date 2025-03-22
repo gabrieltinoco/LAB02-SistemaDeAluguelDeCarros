@@ -8,10 +8,10 @@
 		<version>3.4.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.lab02</groupId>
-	<artifactId>rentwheels</artifactId>
+	<groupId>com.AluguelDeCarros</groupId>
+	<artifactId>RentWheels</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>rentwheels</name>
+	<name>RentWheels</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>

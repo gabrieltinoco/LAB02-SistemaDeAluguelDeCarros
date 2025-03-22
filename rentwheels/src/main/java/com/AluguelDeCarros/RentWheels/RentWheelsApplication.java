@@ -1,12 +1,13 @@
-package com.lab02.rentwheels;
+package com.AluguelDeCarros.RentWheels;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RentwheelsApplication {
+public class RentWheelsApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RentwheelsApplication.class, args);
+		SpringApplication.run(RentWheelsApplication.class, args);
 	}
+
 }
