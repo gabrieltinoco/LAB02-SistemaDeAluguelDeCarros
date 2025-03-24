@@ -1,9 +1,9 @@
-package com.AluguelDeCarros.RentWheels.Controllers;
+package com.AluguelDeCarros.RentWheels.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.AluguelDeCarros.RentWheels.Services.Service;
+import com.AluguelDeCarros.RentWheels.service.Service;
 
 @RestController
 public class Controller {

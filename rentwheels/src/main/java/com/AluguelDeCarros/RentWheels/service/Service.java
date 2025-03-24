@@ -1,4 +1,4 @@
-package com.AluguelDeCarros.RentWheels.Services;
+package com.AluguelDeCarros.RentWheels.service;
 
 public class Service {
 
