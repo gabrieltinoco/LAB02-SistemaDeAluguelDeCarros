@@ -1,9 +1,9 @@
-package com.AluguelDeCarros.RentWheels;
+package com.AluguelDeCarros.RentWheels.Application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"com.exemplo"})
 public class RentWheelsApplication {
 
 	public static void main(String[] args) {
