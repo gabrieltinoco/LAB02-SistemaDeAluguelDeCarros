@@ -1,11 +1,13 @@
 package com.laboratorio02.rentwheels.controllers;
 
+import com.laboratorio02.rentwheels.dto.RequisicaoFormProfessor;
 import com.laboratorio02.rentwheels.models.Professor;
 import com.laboratorio02.rentwheels.models.StatusProfessor;
 import com.laboratorio02.rentwheels.repositories.ProfessorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.math.BigDecimal;
@@ -42,5 +44,12 @@ public class ProfessorController {
         ModelAndView mv = new ModelAndView("professores/novo");
         mv.addObject("statusProfessor", StatusProfessor.values());
         return mv;
+    }
+
+    @PostMapping("/professores")
+    public String create(RequisicaoFormProfessor requisicao) {
+        Professor professor = requisicao.toProfessor();
+        this.professorRepository.save(professor);
+        return "redirect:/professores";
     }
 }
