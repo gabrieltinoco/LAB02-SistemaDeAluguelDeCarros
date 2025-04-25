@@ -36,4 +36,11 @@ public class ProfessorController {
 
         return mv;
     }
+    @GetMapping("/professores/novo")
+    public ModelAndView novo() {
+
+        ModelAndView mv = new ModelAndView("professores/novo");
+        mv.addObject("statusProfessor", StatusProfessor.values());
+        return mv;
+    }
 }
