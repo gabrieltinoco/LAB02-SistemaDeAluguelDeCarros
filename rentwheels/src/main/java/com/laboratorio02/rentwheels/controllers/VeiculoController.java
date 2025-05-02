@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -28,12 +29,14 @@ public class VeiculoController {
         return mv;
     }
 
+    @GetMapping("/veiculos/novo")
     public ModelAndView novo(){
         ModelAndView mv = new ModelAndView("veiculos/novo");
         mv.addObject("requisicaoFormVeiculo", new RequisicaoFormVeiculo());
         return mv;
     }
 
+    @PostMapping("/veiculos")
     public ModelAndView create(@Valid RequisicaoFormVeiculo requisicao, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             ModelAndView mv = new ModelAndView("veiculos/novo");

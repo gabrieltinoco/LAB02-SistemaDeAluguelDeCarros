@@ -12,7 +12,7 @@
 
 <div class="container">
     <div class="row">
-        <form th:object="${requisicaoFormVeiculo}" action="/professores" method="POST">
+        <form th:object="${requisicaoFormVeiculo}" action="/veiculos" method="POST">
             <div class="mb-3">
                 <label class="form-label">Modelo</label>
                 <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{modelo}">
