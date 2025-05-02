@@ -3,14 +3,20 @@ package com.laboratorio02.rentwheels.dto;
 
 import com.laboratorio02.rentwheels.models.Professor;
 import com.laboratorio02.rentwheels.models.StatusProfessor;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.math.BigDecimal;
 
 // É uma classe DTO (Data Transfer Object)
 public class RequisicaoFormProfessor {
 
+    @NotNull
+    @NotBlank
     private String nome; // em caso de erro, NotBlank.requisicaoNovoProfessor.nome
-
+    @NotNull
+    @DecimalMin(value = "0.01")
     private BigDecimal salario;
     private StatusProfessor statusProfessor;
 

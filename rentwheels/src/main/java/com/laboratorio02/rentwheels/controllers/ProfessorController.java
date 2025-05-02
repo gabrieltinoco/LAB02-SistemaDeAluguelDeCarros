@@ -4,8 +4,10 @@ import com.laboratorio02.rentwheels.dto.RequisicaoFormProfessor;
 import com.laboratorio02.rentwheels.models.Professor;
 import com.laboratorio02.rentwheels.models.StatusProfessor;
 import com.laboratorio02.rentwheels.repositories.ProfessorRepository;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -22,7 +24,7 @@ public class ProfessorController {
     private ProfessorRepository professorRepository;
 
     @GetMapping("/professores")
-    public ModelAndView index(){
+    public ModelAndView index() {
 //        Professor batman = new Professor("Batman", new BigDecimal(5000.0), StatusProfessor.ATIVO);
 //        batman.setId(1L);
 //        Professor coringa = new Professor("Coringa", new BigDecimal(10000.0), StatusProfessor.APOSENTADO);
@@ -32,24 +34,30 @@ public class ProfessorController {
 //        List<Professor> professores = Arrays.asList(batman, coringa, mulherMaravilha);
 
         List<Professor> professores = this.professorRepository.findAll();
-
         ModelAndView mv = new ModelAndView("professores/index");
         mv.addObject("professores", professores);
 
         return mv;
     }
+
     @GetMapping("/professores/novo")
     public ModelAndView novo() {
-
         ModelAndView mv = new ModelAndView("professores/novo");
+        mv.addObject("requisicaoFormProfessor", new RequisicaoFormProfessor()); // <-- linha essencial
         mv.addObject("statusProfessor", StatusProfessor.values());
         return mv;
     }
 
     @PostMapping("/professores")
-    public String create(RequisicaoFormProfessor requisicao) {
-        Professor professor = requisicao.toProfessor();
-        this.professorRepository.save(professor);
-        return "redirect:/professores";
+    public ModelAndView create(@Valid RequisicaoFormProfessor requisicao, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            ModelAndView mv = new ModelAndView("professores/novo");
+            mv.addObject("statusProfessor", StatusProfessor.values());
+            return mv;
+        } else {
+            Professor professor = requisicao.toProfessor();
+            this.professorRepository.save(professor);
+            return new ModelAndView("redirect:/professores");
+        }
     }
 }
