@@ -1,13 +1,24 @@
 package com.laboratorio02.rentwheels.dto;
 
 import com.laboratorio02.rentwheels.models.Cliente;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 // É uma classe DTO (Data Transfer Object)
 public class RequisicaoFormCliente {
 
+    @NotNull
+    @NotBlank
     private String nome;
+
+    @NotNull
+    @NotBlank
     private String email;
+
+    @NotNull
+    @NotBlank
     private String senha;
+
 
     public String getNome() {
         return nome;

@@ -16,18 +16,21 @@
 </div>
 <div class="container">
     <div class="row">
-        <form action="/clientes" method="POST">
+        <form th:object="${requisicaoFormCliente}" action="/clientes" method="POST">
             <div class="mb-3">
-                <label for="nome" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="nome" name="nome">
+                <label class="form-label">Nome</label>
+                <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{nome}">
+                <div class="invalid-feedback" th:errors="*{nome}"></div>
             </div>
             <div class="mb-3">
                 <label class="form-label">Email</label>
-                <input type="text" class="form-control" id="email" name="email">
+                <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{email}">
+                <div class="invalid-feedback" th:errors="*{email}"></div>
             </div>
             <div class="mb-3">
                 <label class="form-label">Senha</label>
-                <input type="text" class="form-control" id="senha" name="senha">
+                <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{senha}">
+                <div class="invalid-feedback" th:errors="*{senha}"></div>
             </div>
 
             <button type="submit" class="btn btn-primary">Salvar</button>
