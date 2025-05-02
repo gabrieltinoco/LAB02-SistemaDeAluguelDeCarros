@@ -1,0 +1,28 @@
+<header th:fragment="header">
+    <div class="container mt-3">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a aria-current="page" class="nav-link"
+                   th:classappend="active"
+                   href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"
+                   th:classappend="active"
+                   href="/professores">Professores</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"
+                   th:classappend="active"
+                   href="/clientes">Clientes</a>
+            </li>
+        </ul>
+    </div>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-12">
+                <h1 th:text="${titulo}">Oi!</h1>
+            </div>
+        </div>
+    </div>
+</header>
