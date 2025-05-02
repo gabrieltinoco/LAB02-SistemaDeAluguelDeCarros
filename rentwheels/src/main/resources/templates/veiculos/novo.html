@@ -1,0 +1,46 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadastro de Veiculos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+<body>
+
+<header th:replace="~{fragmentos :: header}"></header>
+
+<div class="container">
+    <div class="row">
+        <form th:object="${requisicaoFormVeiculo}" action="/professores" method="POST">
+            <div class="mb-3">
+                <label class="form-label">Modelo</label>
+                <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{modelo}">
+                <div class="invalid-feedback" th:errors="*{modelo}"></div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Marca</label>
+                <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{marca}">
+                <div class="invalid-feedback" th:errors="*{marca}"></div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ano</label>
+                <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{ano}">
+                <div class="invalid-feedback" th:errors="*{ano}"></div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Placa</label>
+                <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{placa}">
+                <div class="invalid-feedback" th:errors="*{placa}"></div>
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+            <a href="javascript:history.back()">Voltar</a>
+        </form>
+    </div>
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
+</html>

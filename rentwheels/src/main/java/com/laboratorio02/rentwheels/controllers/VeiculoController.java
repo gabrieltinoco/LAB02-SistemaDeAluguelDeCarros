@@ -30,7 +30,7 @@ public class VeiculoController {
 
     public ModelAndView novo(){
         ModelAndView mv = new ModelAndView("veiculos/novo");
-        mv.addObject("veiculo", new RequisicaoFormVeiculo());
+        mv.addObject("requisicaoFormVeiculo", new RequisicaoFormVeiculo());
         return mv;
     }
 
@@ -45,5 +45,5 @@ public class VeiculoController {
         }
     }
 
-    
+
 }
