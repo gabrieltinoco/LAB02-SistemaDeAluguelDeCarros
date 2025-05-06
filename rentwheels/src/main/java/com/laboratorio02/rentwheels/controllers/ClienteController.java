@@ -27,7 +27,7 @@ public class ClienteController {
 
         ModelAndView mv = new ModelAndView("clientes/index");
         mv.addObject("clientes", clientes);
-
+        mv.addObject("page", "clientes");
         return mv;
     }
 
@@ -35,6 +35,7 @@ public class ClienteController {
     public ModelAndView novo() {
         ModelAndView mv = new ModelAndView("clientes/novo");
         mv.addObject("requisicaoFormCliente", new RequisicaoFormCliente());
+        mv.addObject("page", "clientes/novo");
         return mv;
     }
 

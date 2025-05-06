@@ -25,7 +25,7 @@ public class VeiculoController {
         List<Veiculo> veiculos = this.veiculoRepository.findAll();
         ModelAndView mv = new ModelAndView("veiculos/index");
         mv.addObject("veiculos", veiculos);
-
+        mv.addObject("page", "veiculos");
         return mv;
     }
 
@@ -33,6 +33,7 @@ public class VeiculoController {
     public ModelAndView novo(){
         ModelAndView mv = new ModelAndView("veiculos/novo");
         mv.addObject("requisicaoFormVeiculo", new RequisicaoFormVeiculo());
+        mv.addObject("page", "veiculos/novo");
         return mv;
     }
 

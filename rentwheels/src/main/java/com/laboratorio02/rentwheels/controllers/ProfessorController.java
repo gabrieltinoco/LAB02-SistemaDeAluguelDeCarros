@@ -29,6 +29,7 @@ public class ProfessorController {
         List<Professor> professores = this.professorRepository.findAll();
         ModelAndView mv = new ModelAndView("professores/index");
         mv.addObject("professores", professores);
+        mv.addObject("page", "professores");
 
         return mv;
     }
@@ -38,6 +39,7 @@ public class ProfessorController {
         ModelAndView mv = new ModelAndView("professores/novo");
         mv.addObject("requisicaoFormProfessor", new RequisicaoFormProfessor()); // <-- linha essencial
         mv.addObject("statusProfessor", StatusProfessor.values());
+        mv.addObject("page", "professores/novo");
         return mv;
     }
 
