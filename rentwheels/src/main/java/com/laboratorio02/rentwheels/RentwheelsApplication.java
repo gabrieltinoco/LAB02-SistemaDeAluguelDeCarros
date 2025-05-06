@@ -1,4 +1,4 @@
-package com.lab02.rentwheels;
+package com.laboratorio02.rentwheels;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,4 +9,5 @@ public class RentwheelsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(RentwheelsApplication.class, args);
 	}
+
 }

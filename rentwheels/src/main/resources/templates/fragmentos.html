@@ -1,0 +1,44 @@
+<header th:fragment="header">
+    <div class="bg-white shadow-sm py-3">
+        <div class="container d-flex flex-wrap align-items-center justify-content-between">
+            <!-- Logo e nome -->
+            <!--            <div class="d-flex align-items-center mb-2 mb-lg-0">-->
+            <!--                <img src="/images/logo.png" alt="Logo" class="me-3" style="height: 50px;" th:src="@{/images/logo.png}">-->
+            <!--                <span class="fs-4 fw-bold text-primary">RentWheels</span>-->
+            <!--            </div>-->
+            <a href="/" class="d-flex align-items-center text-decoration-none">
+                <img src="/images/logo.png" alt="Logo" class="me-3" style="height: 50px;" th:src="@{/images/logo.png}">
+                <span class="fs-4 fw-bold text-primary">RentWheels</span>
+            </a>
+            <!-- Botão de login -->
+            <div class="text-end">
+                <a class="btn btn-outline-primary" href="/login">Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navegação -->
+    <div class="bg-light border-bottom">
+        <div class="container">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend='active' href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend='active' href="/professores">Professores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend='active' href="/clientes">Clientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend='active' href="/veiculos">Veículos</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Título da página -->
+    <div class="container my-4">
+        <h1 class="display-6 text-secondary" th:text="${titulo}">Bem-vindo!</h1>
+    </div>
+</header>

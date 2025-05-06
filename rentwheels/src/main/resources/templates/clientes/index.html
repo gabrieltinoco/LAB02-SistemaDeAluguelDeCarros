@@ -1,0 +1,50 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lista de Clientes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+
+<header th:replace="~{fragmentos :: header}"></header>
+
+<body>
+
+<div class="container mt-4">
+    <div class="row">
+        <h1>Lista de Clientes</h1>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Email</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="cliente : ${clientes}">
+                    <th class="col-1" scope="row" th:text="${cliente.id}">ID</th>
+                    <td class="col-4" th:text="${cliente.nome}">Nome do Cliente</td>
+                    <td class="col-4" th:text="${cliente.email}">Email</td>
+                    <td class="col-1"><a th:href="@{/clientes/{clienteId}(clienteId=${cliente.id})}">Detalhes</a></td>
+                    <td class="col-1"><a th:href="@{/clientes/{clienteId}/edit(clienteId=${cliente.id})}">Editar</a></td>
+                    <td class="col-1"><a th:href="@{/clientes/{clienteId}/delete(clienteId=${cliente.id})}">Deletar</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <a href="/clientes/novo">Novo Cliente</a>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
+</html>
