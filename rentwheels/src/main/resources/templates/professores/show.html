@@ -1,0 +1,29 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragmentos :: head('Cadastro de Professores')}"></head>
+
+<body>
+
+<header th:replace="~{fragmentos :: header('Professor #' + ${professor.id})}"></header>
+
+<main>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12">
+                <b>Nome:</b> <span th:text="${professor.nome}"></span><br/>
+                <b>Salário:</b> <span th:text="${professor.salario}"></span><br/>
+                <b>Status:</b> <span th:text="${professor.statusProfessor.toString()}"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <a th:href="@{/professores/{professorId}/edit(professorId = ${professor.id})}">Editar</a> <a href="/professores">Voltar</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
+</html>
