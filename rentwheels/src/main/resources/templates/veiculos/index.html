@@ -21,8 +21,8 @@
                 <thead>
                 <tr>
                     <th scope="col">Id</th>
-                    <th scope="col">Modelo</th>
                     <th scope="col">Marca</th>
+                    <th scope="col">Modelo</th>
                     <th scope="col">Ano</th>
                     <th scope="col">Placa</th>
                     <th scope="col"></th>
@@ -33,10 +33,10 @@
                 <tbody>
                 <tr th:each="veiculo : ${veiculos}">
                     <th class="col-1" scope="row" th:text="${veiculo.matricula}">ID</th>
-                    <td class="col-4" th:text="${veiculo.modelo}">Modelo do Veiculo</td>
-                    <td class="col-4" th:text="${veiculo.marca}">Marca do Veiculo</td>
-                    <td class="col-4" th:text="${veiculo.ano}">Ano de fabricação do Veiculo</td>
-                    <td class="col-4" th:text="${veiculo.placa}">Placa do Veiculo</td>
+                    <td class="col-3" th:text="${veiculo.marca}">Marca do Veiculo</td>
+                    <td class="col-3" th:text="${veiculo.modelo}">Modelo do Veiculo</td>
+                    <td class="col-3" th:text="${veiculo.ano}">Ano de fabricação do Veiculo</td>
+                    <td class="col-3" th:text="${veiculo.placa}">Placa do Veiculo</td>
                     <td class="col-1"><a>Detalhes</a></td>
                     <td class="col-1"><a>Editar</a></td>
                     <td class="col-1"><a>Deletar</a></td>
