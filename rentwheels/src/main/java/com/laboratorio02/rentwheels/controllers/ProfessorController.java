@@ -11,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.math.BigDecimal;
@@ -20,12 +21,13 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
+@RequestMapping("/professores")
 public class ProfessorController {
 
     @Autowired
     private ProfessorRepository professorRepository;
 
-    @GetMapping("/professores")
+    @GetMapping("")
     public ModelAndView index() {
 
         List<Professor> professores = this.professorRepository.findAll();
@@ -36,7 +38,7 @@ public class ProfessorController {
         return mv;
     }
 
-    @GetMapping("/professores/novo")
+    @GetMapping("/novo")
     public ModelAndView novo() {
         ModelAndView mv = new ModelAndView("professores/novo");
         mv.addObject("requisicaoFormProfessor", new RequisicaoFormProfessor()); // <-- linha essencial
@@ -45,7 +47,7 @@ public class ProfessorController {
         return mv;
     }
 
-    @PostMapping("/professores")
+    @PostMapping("")
     public ModelAndView create(@Valid RequisicaoFormProfessor requisicao, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             ModelAndView mv = new ModelAndView("professores/novo");
@@ -58,7 +60,7 @@ public class ProfessorController {
         }
     }
 
-    @GetMapping("/professores/{id}")
+    @GetMapping("/{id}")
     public ModelAndView show(@PathVariable Long id) {
 
         Optional<Professor> optional = this.professorRepository.findById(id);

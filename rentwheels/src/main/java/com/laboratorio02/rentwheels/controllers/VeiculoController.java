@@ -10,17 +10,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
 @Controller
+@RequestMapping("/veiculos")
 public class VeiculoController {
 
     @Autowired
     private VeiculoRepository veiculoRepository;
 
-    @GetMapping("/veiculos")
+    @GetMapping("")
     public ModelAndView index(){
         List<Veiculo> veiculos = this.veiculoRepository.findAll();
         ModelAndView mv = new ModelAndView("veiculos/index");
@@ -29,7 +31,7 @@ public class VeiculoController {
         return mv;
     }
 
-    @GetMapping("/veiculos/novo")
+    @GetMapping("/novo")
     public ModelAndView novo(){
         ModelAndView mv = new ModelAndView("veiculos/novo");
         mv.addObject("requisicaoFormVeiculo", new RequisicaoFormVeiculo());
@@ -37,7 +39,7 @@ public class VeiculoController {
         return mv;
     }
 
-    @PostMapping("/veiculos")
+    @PostMapping("")
     public ModelAndView create(@Valid RequisicaoFormVeiculo requisicao, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             ModelAndView mv = new ModelAndView("veiculos/novo");

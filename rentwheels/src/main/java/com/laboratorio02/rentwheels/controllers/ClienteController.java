@@ -11,17 +11,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
 @Controller
+@RequestMapping("/clientes")
 public class ClienteController {
 
     @Autowired
     private ClienteRepository clienteRepository;
 
-    @GetMapping("/clientes")
+    @GetMapping("")
     public ModelAndView index() {
         List<Cliente> clientes = clienteRepository.findAll();
 
@@ -31,7 +33,7 @@ public class ClienteController {
         return mv;
     }
 
-    @GetMapping("/clientes/novo")
+    @GetMapping("/novo")
     public ModelAndView novo() {
         ModelAndView mv = new ModelAndView("clientes/novo");
         mv.addObject("requisicaoFormCliente", new RequisicaoFormCliente());
@@ -39,7 +41,7 @@ public class ClienteController {
         return mv;
     }
 
-    @PostMapping("/clientes")
+    @PostMapping("")
     public ModelAndView create(@Valid RequisicaoFormCliente requisicao, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
