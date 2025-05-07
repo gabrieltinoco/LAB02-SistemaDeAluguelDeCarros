@@ -76,4 +76,44 @@ public class ProfessorController {
         }
     }
 
+
+    @GetMapping("/{id}/edit")
+    public ModelAndView edit(@PathVariable Long id, RequisicaoFormProfessor requisicao) {
+
+        Optional<Professor> optional = this.professorRepository.findById(id);
+
+        if (optional.isPresent()) {
+            Professor p = optional.get();
+            requisicao.fromProfessor(p);
+            ModelAndView mv = new ModelAndView("professores/edit");
+            mv.addObject("page", "professores/edit");
+            mv.addObject("professorId", p.getId());
+            mv.addObject("statusProfessor", StatusProfessor.values());
+            return mv;
+        } else {
+            return new ModelAndView("redirect:/professores");
+        }
+    }
+
+    @PostMapping("/{id}")
+    public ModelAndView update(@PathVariable Long id, @Valid RequisicaoFormProfessor requisicao, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            ModelAndView mv = new ModelAndView("professores/edit");
+            mv.addObject("professorId", id);
+            mv.addObject("page", "professores/edit");
+            mv.addObject("statusProfessor", StatusProfessor.values());
+            return mv;
+        } else {
+            Optional<Professor> optional = this.professorRepository.findById(id);
+            if (optional.isPresent()) {
+                Professor professor = requisicao.toProfessor(optional.get());
+                this.professorRepository.save(professor);
+                ModelAndView mv = new ModelAndView("redirect:/professores/" + professor.getId());
+                mv.addObject("page", "professores/show");
+                return mv;
+            } else{
+                return new ModelAndView("redirect:/professores");
+            }
+        }
+    }
 }
