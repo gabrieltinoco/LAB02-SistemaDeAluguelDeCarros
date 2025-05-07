@@ -1,11 +1,15 @@
-<header th:fragment="header">
+<head th:fragment="head(titulo)">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title th:text="${titulo}">Lista de Clientes</title>
+</head>
+
+
+<header th:fragment="header(titulo)">
     <div class="bg-white shadow-sm py-3">
         <div class="container d-flex flex-wrap align-items-center justify-content-between">
-            <!-- Logo e nome -->
-            <!--            <div class="d-flex align-items-center mb-2 mb-lg-0">-->
-            <!--                <img src="/images/logo.png" alt="Logo" class="me-3" style="height: 50px;" th:src="@{/images/logo.png}">-->
-            <!--                <span class="fs-4 fw-bold text-primary">RentWheels</span>-->
-            <!--            </div>-->
             <a href="/" class="d-flex align-items-center text-decoration-none">
                 <img src="/images/logo.png" alt="Logo" class="me-3" style="height: 50px;" th:src="@{/images/logo.png}">
                 <span class="fs-4 fw-bold text-primary">RentWheels</span>
@@ -22,23 +26,32 @@
         <div class="container">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
-                    <a class="nav-link" th:classappend='active' href="/">Home</a>
+                    <a class="nav-link"
+                       th:classappend="${page == 'home'} ? ' active' : ''"
+                       href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:classappend='active' href="/professores">Professores</a>
+                    <a class="nav-link"
+                       th:classappend="${page.startsWith('professores')} ? ' active' : ''"
+                       href="/professores">Professores</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:classappend='active' href="/clientes">Clientes</a>
+                    <a class="nav-link"
+                       th:classappend="${page.startsWith('clientes')} ? ' active' : ''"
+                       href="/clientes">Clientes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:classappend='active' href="/veiculos">Veículos</a>
+                    <a class="nav-link"
+                       th:classappend="${page.startsWith('veiculos')} ? ' active' : ''"
+                       href="/veiculos">Veículos</a>
                 </li>
+
             </ul>
         </div>
     </div>
 
     <!-- Título da página -->
     <div class="container my-4">
-        <h1 class="display-6 text-secondary" th:text="${titulo}">Bem-vindo!</h1>
+        <h1 class="display-6" th:text="${titulo}">Bem-vindo!</h1>
     </div>
 </header>

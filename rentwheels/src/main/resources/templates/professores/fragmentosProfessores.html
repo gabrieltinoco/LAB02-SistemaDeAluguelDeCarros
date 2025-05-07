@@ -1,0 +1,44 @@
+<div class="container" th:fragment="formulario(requisicaoFormProfessor, action)">
+    <div class="row">
+        <form th:object="${requisicaoFormProfessor}" th:action="${action}" method="POST">
+            <div class="mb-3">
+                <label class="form-label">Nome</label>
+                <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{nome}">
+                <div class="invalid-feedback" th:errors="*{nome}"></div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Salário</label>
+                <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{salario}">
+                <div class="invalid-feedback" th:errors="*{salario}"></div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Status</label>
+                <select class="form-select" th:field="*{statusProfessor}">
+                    <option th:each="status : ${statusProfessor}"
+                            th:value="${status}" th:text="${status}"></option>
+
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+            <a href="javascript:history.back()">Voltar</a>
+        </form>
+    </div>
+</div>
+
+<div th:fragment="delete" class="modal fade" th:id="staticBackdrop+${professor.id}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Excluir Registro</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h5>Deseja excluir o professor #<span th:text="${professor.id}"></span>?</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                <a th:href="@{/professores/{professorId}/delete(professorId=${professor.id})}" class="btn btn-danger">Sim</a>
+            </div>
+        </div>
+    </div>
+</div>
