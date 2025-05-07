@@ -7,32 +7,7 @@
 
 <header th:replace="~{fragmentos :: header('Cadastro de Professores')}"></header>
 
-    <div class="container">
-        <div class="row">
-            <form th:object="${requisicaoFormProfessor}" action="/professores" method="POST">
-                <div class="mb-3">
-                    <label class="form-label">Nome</label>
-                    <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{nome}">
-                    <div class="invalid-feedback" th:errors="*{nome}"></div>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Salário</label>
-                    <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{salario}">
-                    <div class="invalid-feedback" th:errors="*{salario}"></div>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Status</label>
-                    <select class="form-select" th:field="*{statusProfessor}">
-                        <option th:each="status : ${statusProfessor}"
-                                            th:value="${status}" th:text="${status}"></option>
-
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary">Salvar</button>
-                <a href="javascript:history.back()">Voltar</a>
-            </form>
-        </div>
-    </div>
+    <div th:replace="~{professores/fragmentosProfessores :: formulario(requisicaoFormProfessor, '/professores')}"></div>
 
 </div>
 
