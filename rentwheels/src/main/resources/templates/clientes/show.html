@@ -1,24 +1,23 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="~{fragmentos :: head('Detalhes de Professores')}"></head>
+<head th:replace="~{fragmentos :: head('Detalhes de Clientes')}"></head>
 
 <body>
 
-<header th:replace="~{fragmentos :: header('Professor #' + ${professor.id})}"></header>
+<header th:replace="~{fragmentos :: header('Cliente #' + ${cliente.id})}"></header>
 
 <main>
     <div class="container mt-4">
         <div class="row">
             <div class="col-12">
-                <b>Nome:</b> <span th:text="${professor.nome}"></span><br/>
-                <b>Salário:</b> <span th:text="${professor.salario}"></span><br/>
-                <b>Status:</b> <span th:text="${professor.statusProfessor.toString()}"></span>
+                <b>Nome:</b> <span th:text="${cliente.nome}"></span><br/>
+                <b>Salário:</b> <span th:text="${cliente.email}"></span><br/>
             </div>
         </div>
         <div class="row">
             <div class="col-12">
-                <a th:href="@{/professores/{professorId}/edit(professorId = ${professor.id})}">Editar</a> <a href="/professores">Voltar</a>
+                <a th:href="@{/clientes/{clienteId}/edit(clienteId = ${cliente.id})}">Editar</a> <a href="/clientes">Voltar</a>
             </div>
         </div>
     </div>

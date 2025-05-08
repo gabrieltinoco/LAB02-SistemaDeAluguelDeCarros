@@ -7,6 +7,14 @@
 
 <body>
 
+<div class="container mb-4">
+    <div class="col-12">
+        <span th:styleappend="${(param.erro == null || param.mensagem == null) ? 'display: none;' : ''}"
+              th:classappend="${(param.erro != null && param.erro) ? 'error-message' : 'success-message'}"
+              th:text="${param.mensagem != null ? param.mensagem : ''}">Uma mensagem bem legal!</span>
+    </div>
+</div>
+
 <div class="container mt-4">
     <div class="row">
         <div class="col-12">
@@ -28,7 +36,10 @@
                     <td class="col-4" th:text="${cliente.email}">Email</td>
                     <td class="col-1"><a th:href="@{/clientes/{clienteId}(clienteId=${cliente.id})}">Detalhes</a></td>
                     <td class="col-1"><a th:href="@{/clientes/{clienteId}/edit(clienteId=${cliente.id})}">Editar</a></td>
-                    <td class="col-1"><a th:href="@{/clientes/{clienteId}/delete(clienteId=${cliente.id})}">Deletar</a></td>
+                    <td class="col-1">
+                        <a href="#" data-bs-toggle="modal" th:attr="data-bs-target='#staticBackdrop'+${cliente.id}">Deletar</a>
+                        <div th:replace="~{clientes/fragmentosClientes :: delete}"></div>
+                    </td>
                 </tr>
                 </tbody>
             </table>

@@ -1,13 +1,13 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="~{fragmentos :: head('Cadastro de Veiculos')}"></head>
+<head th:replace="~{fragmentos :: head('Editar Cliente')}"></head>
 
 <body>
 
-<header th:replace="~{fragmentos :: header('Cadastro de Veiculos')}"></header>
+<header th:replace="~{fragmentos :: header('Editar Cliente #' + ${clienteId})}"></header>
 
-<div th:replace="~{veiculos/fragmentosVeiculos :: formulario(requisicaoFormVeiculo, '/veiculos')}"></div>
+<div th:replace="~{clientes/fragmentosClientes :: formulario(requisicaoFormCliente, '/clientes/' + ${clienteId})}"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 </body>
