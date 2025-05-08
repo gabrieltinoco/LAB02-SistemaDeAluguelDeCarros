@@ -1,10 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<div class="container" th:fragment="formulario(requisicaoFormVeiculo, action)">
+    <div class="row">
+        <form th:object="${requisicaoFormVeiculo}" th:action="${action}" method="POST">
+            <div class="mb-3">
+                <label class="form-label">Modelo</label>
+                <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{modelo}">
+                <div class="invalid-feedback" th:errors="*{modelo}"></div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Marca</label>
+                <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{marca}">
+                <div class="invalid-feedback" th:errors="*{marca}"></div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Ano</label>
+                <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{ano}">
+                <div class="invalid-feedback" th:errors="*{ano}"></div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Placa</label>
+                <input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{placa}">
+                <div class="invalid-feedback" th:errors="*{placa}"></div>
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+            <a href="javascript:history.back()">Voltar</a>
+        </form>
+    </div>
+</div>
 
-</body>
-</html>
+<div th:fragment="delete" class="modal fade" th:id="staticBackdrop+${veiculo.id}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Excluir Registro</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h5>Deseja excluir o veiculo #<span th:text="${veiculo.id}"></span>?</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                <a th:href="@{/veiculos/{veiculoId}/delete(veiculoId=${veiculo.id})}" class="btn btn-danger">Sim</a>
+            </div>
+        </div>
+    </div>
+</div>
+

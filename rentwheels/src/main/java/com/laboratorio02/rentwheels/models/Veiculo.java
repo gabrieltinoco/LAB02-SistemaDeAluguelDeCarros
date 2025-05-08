@@ -10,7 +10,7 @@ public class Veiculo {
 
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private Long matricula;
+    private Long id;
 
     @Column(nullable = false)
     private String modelo;
@@ -28,20 +28,20 @@ public class Veiculo {
     public Veiculo() {
     }
 
-    public Veiculo(Long matricula, String modelo, String ano, String placa, String marca) {
-        this.matricula = matricula;
+    public Veiculo(Long id, String modelo, String ano, String placa, String marca) {
+        this.id = id;
         this.modelo = modelo;
         this.ano = ano;
         this.placa = placa;
         this.marca = marca;
     }
 
-    public Long getMatricula() {
-        return matricula;
+    public Long getId() {
+        return id;
     }
 
-    public void setMatricula(Long matricula) {
-        this.matricula = matricula;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getModelo() {
