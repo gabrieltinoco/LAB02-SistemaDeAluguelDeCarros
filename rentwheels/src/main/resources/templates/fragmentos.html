@@ -32,7 +32,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link"
-                       th:classappend="${page.startsWith('professores')} ? ' active' : ''"
+                       th:classappend="${page != null and page.startsWith('professores')} ? ' active' : ''"
                        href="/professores">Professores</a>
                 </li>
                 <li class="nav-item">

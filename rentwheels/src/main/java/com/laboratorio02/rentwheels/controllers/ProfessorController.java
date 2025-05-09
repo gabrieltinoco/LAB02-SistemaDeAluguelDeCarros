@@ -50,6 +50,7 @@ public class ProfessorController {
         if (bindingResult.hasErrors()) {
             ModelAndView mv = new ModelAndView("professores/novo");
             mv.addObject("statusProfessor", StatusProfessor.values());
+            mv.addObject("page", "professores/novo");
             return mv;
         } else {
             Professor professor = requisicao.toProfessor();
